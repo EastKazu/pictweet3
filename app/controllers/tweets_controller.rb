@@ -29,6 +29,10 @@ class TweetsController < ApplicationController
     redirect_to action: :index
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
+
   private
   def tweet_params
     params.require(:tweet).permit(:name, :text, :image)
